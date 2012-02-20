@@ -74,6 +74,7 @@
     
     $(function() {
       $('#filter').submit(function() {
+        $('#punchcard').html();
         $('#loading').show();
         var filter = {};
         filter.verbs = $('#verbs').val();
