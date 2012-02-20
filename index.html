@@ -72,8 +72,7 @@
       });
     };
     
-    $(function() {
-      $('#filter').submit(function() {
+      var $go = function() {
         $('svg').remove();
         $('#loading').show();
         var filter = {};
@@ -87,8 +86,16 @@
           limit = 1000;
         }
         loadPunchCard(filter, limit);
+      };
+    
+    $(function() {
+      $go();
+      
+      $('#filter').submit(function() {
+        $go();
         return false;
       });
+      
     });
   </script>
 </head>
